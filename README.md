@@ -17,7 +17,8 @@
 //////////////////////////////////////////////////////////////////////////
 
 // 添加操作
-    // 方法1
+// 方法1
+
     [SMCoreDataTool sm_toolAddDataWithEntity:ExampleEntity attributeNames:@[@"name", @"title", @"age"] attributeValues:@[@"jack", @"jack is ugly", @"22"]];
     
     // 方法2
@@ -29,20 +30,24 @@
     [SMCoreDataTool sm_toolAddDataWithEntity:ExampleEntity attributeModel:model];
 
 // 查询操作
+
     NSArray *arr = [SMCoreDataTool sm_toolSearchDataWithEntity:ExampleEntity andPredicate:nil];
     for (Example *example in arr) {
         NSLog(@"arr1 : %@ - %@ - %@", example.name, example.age, example.title);
     }
     
 // 删除操作
+
     [SMCoreDataTool sm_toolDeleteDataWithEntity:ExampleEntity andPredicate:@"name = 'jack'"];
     
 // 更新操作
+
     [SMCoreDataTool sm_toolUpdateDataWithEntity:ExampleEntity attributeName:@"title" predicate:@"name = 'tom'" andUpdateValue:@"tom is ugly too"];
 
 //////////////////////////////////////////////////////////////////////////
 
 // 清除所有结果
+
     [SMCoreDataTool sm_toolClearCoraDataWithEntiy:ExampleEntity];
 
 //////////////////////////////////////////////////////////////////////////
