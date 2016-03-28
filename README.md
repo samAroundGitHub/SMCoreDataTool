@@ -9,6 +9,7 @@
 //////////////////////////////////////////////////////////////////////////
 
 // 查看项目内所有entity
+
     NSArray *entities = [SMCoreDataTool shareSMTool].sm_entitys;
     for (NSEntityDescription *desc in entities) {
         NSLog(@"entityNames: -%@", desc.name);
@@ -17,10 +18,9 @@
 //////////////////////////////////////////////////////////////////////////
 
 // 添加操作
-// 方法1
 
+    // 方法1
     [SMCoreDataTool sm_toolAddDataWithEntity:ExampleEntity attributeNames:@[@"name", @"title", @"age"] attributeValues:@[@"jack", @"jack is ugly", @"22"]];
-    
     // 方法2
     // 运行时机制, 传入model即可
     // model 不含有age属性, 所以age属性不会进入到coredata
